@@ -4,24 +4,21 @@ import Main from "../main/Main";
 import Cart from "../cart/Cart";
 
 const Routes = () => {
+  return (
+    // <div>
+    //     <h1>Routes: Show contens depends on Route name</h1>
+    // </div>
 
-    return (
-        // <div>
-        //     <h1>Routes: Show contens depends on Route name</h1>
-        // </div>
+    <div className="pt-5">
+      <Switch>
+        <Route exact path="/">
+          <Main />
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
+        </Route>
 
-        <div className="pt-5">
-        <Switch>
-
-          <Route exact path="/">
-            <Main />
-          </Route>
-          <Route exact path="/cart">
-              <Cart />
-            
-          </Route>
-
-          {/* <Route exact path="/login">
+        {/* <Route exact path="/login">
             <LoginForm login={login} />
           </Route>
 
@@ -29,7 +26,7 @@ const Routes = () => {
             <SignupForm signup={signup} />
           </Route> */}
 
-          {/* <PrivateRoute exact path="/">
+        {/* <PrivateRoute exact path="/">
             <CompanyList />
           </PrivateRoute>
 
@@ -45,11 +42,10 @@ const Routes = () => {
             <ProfileForm />
           </PrivateRoute> */}
 
-          {/* <Redirect to="/" /> */}
-        </Switch>
-      </div>
-    )
-
-}
+        {/* <Redirect to="/" /> */}
+      </Switch>
+    </div>
+  );
+};
 
 export default Routes;

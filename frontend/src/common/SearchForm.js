@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import "./SearchForm.css";
+import { Button, CloseButton } from "react-bootstrap";
 
-const SearchForm= () => {
+
+const SearchForm= ({searchFor}) => {
 
     const [searchTerm, setSearchTerm] =useState('');
 
 
     const handleSubmit= (evt) =>{
    evt.preventDefault();
-   setSearchTerm('')
+   searchFor(searchTerm.trim() || undefined);
+   setSearchTerm(searchTerm.trim())
 
+    }
+    const cancelSearch = (evt) => {
+        evt.preventDefault();
+        setSearchTerm('')
     }
 
     const handleChange=(evt) => {
@@ -22,7 +29,7 @@ const SearchForm= () => {
 
 
     return(
-        <div className="SearchForm">
+        <div className=" col-md-8 offset-md-2" size="lg">
             <form className="d-flex" onSubmit={handleSubmit}>
                 <input
                  className="form-control"
@@ -30,7 +37,16 @@ const SearchForm= () => {
                  placeholder="Search"
                  value={searchTerm}
                  onChange={handleChange}
-                 />
+                 onCancelSearch={cancelSearch}
+                 
+                 
+                /> 
+                 
+                 
+                 
+                 
+                
+                   <Button  variant="danger" type="reset" defaultValue="Reset"  href='/'    >X</Button>
                  <button type="submit" className="btn">
                      Submit
                  </button>

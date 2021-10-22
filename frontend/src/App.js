@@ -9,17 +9,24 @@ import Main from "./main/Main";
 import Navigation from "./routes-nav/Navigation";
 import Routes from "./routes-nav/Routes";
 
+//Redux
+import { Provider } from "react-redux";
+import store from './Redux/store'
+
 
 const App = () => {
   return (
-<BrowserRouter>
-<div className="App">
-      {/* <h1> App.js top</h1> */}
+    <Provider store={store}>
+      <BrowserRouter>
+      <div className="App">
+   
       <Navigation  />
-      
       <Routes />
   </div>
   </BrowserRouter>
+
+    </Provider>
+
 
 
 
