@@ -1,4 +1,4 @@
-# gameShop
+# Shoppy
 This website is a shopping platform that enables users to buy with their needs. It design used for small businesses
 
 FEATURES . Users can can search any product without new page reload in the page directly,that website and also help filtering features depens on category. User can effectively can add products to cart and continue to the checkout operations.
